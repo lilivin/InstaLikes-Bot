@@ -23,9 +23,14 @@ class InstagramBot:
         password.send_keys(self.password)
         password.send_keys(Keys.RETURN)
         time.sleep(15)
-        bot.find_element_by_class_name('s4Iyt').click()
+        bot.find_element_by_xpath('/html/body/div[2]/div/div/div/div[2]/button[1]').click()
         time.sleep(5)
-        bot.find_element_by_class_name('HoLwm').click()
+        bot.find_element_by_xpath('/html/body/div[1]/section/main/div/div/div/section/div/button').click()
+        time.sleep(5)
+        bot.find_element_by_xpath('/html/body/div[4]/div/div/div/div[3]/button[2]').click()
+        time.sleep(5)
+        
+        
 
     def like_post(self, hashtag):
         bot = self.bot
@@ -45,13 +50,12 @@ class InstagramBot:
             except Exception as e:
                 time.sleep(2)
 
-# Change "username" and "password" on correct to log in to your Instagram account.
-user = InstagramBot('username', 'password')
+# Zmień login oraz haslo na prawidlowe.
+user = InstagramBot('login', 'haslo')
 
 user.login()
 
-# Change "hashtag" to search hashtag from which you want like photos.
-user.like_post('hashtag')
+# Wpisz hashtag na wybrany przez Ciebie
+user.like_post('polishgirl')
 
 
-# If something doesn't work, please contact me and describe error! My email: k.liwinski@gmail.com
